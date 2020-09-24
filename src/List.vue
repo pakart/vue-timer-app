@@ -1,16 +1,26 @@
 <template>
   <div id="app">
-    <List />
+    <div>
+      <Timer v-for="timer in timerCounter" :key="timer"/>
+      <button v-on:click="addTimer()">+</button>
+    </div>
   </div>
 </template>
 
 <script>
-import List from '@/List.vue';
+import Timer from '@/components/Timer.vue';
 
 export default {
-  name: 'App',
+  data: () => ({
+    timerCounter: 0,
+  }),
   components: {
-    List,
+    Timer,
+  },
+  methods: {
+    addTimer() {
+      this.timerCounter += 1;
+    },
   },
 };
 </script>
