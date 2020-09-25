@@ -1,9 +1,13 @@
 <template>
-  <div>
-    <h1>{{resultTimeString}}</h1>
-    <hr>
-    <button v-on:click="startStopTimer()">start</button>
-    <button v-on:click="dropTimer()">drop</button>
+  <div class="timer-body">
+    <h3 class="string inactive" v-bind:class="{active: isActive}">{{resultTimeString}}</h3>
+    <hr class="line inactive" v-bind:class="{active: isActive}">
+    <div class="buttons-container">
+      <div class="button play"
+      v-bind:class="{pause: isActive}" v-on:click="startStopTimer()"></div>
+      <div class="drop-button inactive"
+      v-bind:class="{active: isActive}" v-on:click="dropTimer()"></div>
+    </div>
   </div>
 </template>
 
@@ -53,4 +57,60 @@ export default {
 
 <style>
 
+  .string.inactive{
+    color: #9E9E9E;
+  }
+  .string.active{
+    color: #FFFFFF;
+  }
+  .line.inactive{
+    height: 1px;
+    color: #9E9E9E;
+    border-width: 0;
+    background-color: #9E9E9E;
+  }
+  .line.active{
+    color: #FFFFFF;
+    background-color: #FFFFFF;
+  }
+  .buttons-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .timer-body {
+    width: 225px;
+    height: 120px;
+    background-color: #696969;
+    margin-right: 50px;
+    margin-bottom: 45px;
+  }
+
+  .button.play {
+    margin-right: 50px;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 10px 0px 10px 20px;
+    border-color: transparent transparent transparent #9E9E9E;
+  }
+  .button.pause {
+    width: 20px;
+    height: 20px;
+    border-style: double;
+    border-width: 0px 0px 0px 10px;
+    border-color: #FFFFFF;
+  }
+  .drop-button.inactive {
+    width: 20px;
+    border-style: solid;
+    border-width: 20px 0px 0px 0px;
+    border-color:#9E9E9E;
+  }
+  .drop-button.active{
+    border-color:#FFFFFF;
+  }
 </style>
