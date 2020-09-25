@@ -1,5 +1,10 @@
 # vue-timer-app
 
+Тестовое приложение, на позицию junior frontend (VueJs) разработчик, выполненное по тз:
+https://docs.google.com/document/d/17WEh-ILvUb8qeT3bdvFQPMuT81EPX85OGGg5M_Q1-uk/edit
+
+используется VueJs, JS, linter (Airbnb)
+
 ## Project setup
 ```
 npm install
@@ -19,6 +24,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
